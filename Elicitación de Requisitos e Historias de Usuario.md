@@ -67,3 +67,89 @@
 * Usuario Final (personas adultas, deportistas, personas en control de peso).
 * Agente de Inteligencia Artificial (LLM/API).
 * Dispositivo Físico / Báscula (ESP32).
+
+#### RESTRICCIONES EXPLÍCITAS:
+* Plazo temporal de desarrollo limitado estrictamente a 10 semanas académicas.
+* Prototipado físico en acrílico/impresión 3D, excluyendo fabricación o moldeo industrial.
+* Sin certificación médica regulatoria (FDA, INVIMA, etc.).
+* Limitaciones de memoria RAM/Flash y procesamiento nativas del microcontrolador ESP32.
+
+#### REQUISITOS LATENTES DESCUBIERTOS:
+* Necesidad de almacenar un historial local de lecturas en la App para no perder información si falla temporalmente la conexión a Internet o BLE.
+* Inclusión de avisos de descargo de responsabilidad (*disclaimers*) legales informando que el sistema no sustituye un diagnóstico médico profesional.
+
+---
+
+## 10.5 — Escribe tus Historias de Usuario
+
+### HU-01: Captura de peso y transmisión BLE
+**Como** usuario final,  
+**quiero** pesarme en la báscula física y que el valor se envíe automáticamente a mi aplicación móvil por Bluetooth,  
+**para** tener mi registro de peso actualizado de forma rápida y sin tener que anotarlo manualmente.
+
+**Criterios de aceptación:**
+* **Dado que** la báscula está encendida y la aplicación móvil tiene el Bluetooth activo,
+* **Cuando** el usuario se sube a la báscula y la lectura del peso se estabiliza en menos de 3 segundos,
+* **Entonces** la báscula debe transmitir los datos por BLE y la App debe mostrarlos en pantalla en menos de 2 segundos.
+
+---
+
+### HU-02: Generación de recomendaciones personalizadas por IA
+**Como** usuario final,  
+**quiero** recibir un análisis comprensible y recomendaciones de hábitos al momento de pesarme,  
+**para** comprender mis métricas y saber qué acciones tomar sobre mi hidratación y nutrición diaria.
+
+**Criterios de aceptación:**
+* **Dado que** la App recibió los datos de peso y métricas del usuario vía BLE,
+* **Cuando** la App envía las métricas al módulo de IA (API de LLM),
+* **Entonces** el sistema debe presentar en menos de 5 segundos un reporte claro con consejos empáticos sobre consumo de agua y nutrición adaptados a su perfil.
+
+---
+
+### HU-03: Configuración del perfil de usuario y objetivos
+**Como** usuario registrado,  
+**quiero** definir mis datos básicos (edad, altura, nivel de actividad) y mi objetivo de salud (perder peso, mantener, ganar masa),  
+**para** que el modelo de IA adapte sus recomendaciones a mi situación particular.
+
+**Criterios de aceptación:**
+* **Dado que** el usuario abre la sección de perfil en la aplicación,
+* **Cuando** ingresa sus datos, selecciona su objetivo de salud y presiona "Guardar",
+* **Entonces** la aplicación debe almacenar la configuración y utilizarla como contexto (*prompt*) en las futuras consultas con la IA.
+
+---
+
+### HU-04: Consulta de historial y gráficas de tendencia
+**Como** usuario en control de peso,  
+**quiero** visualizar un dashboard con mi historial de mediciones y gráficas de tendencia temporal,  
+**para** evaluar el progreso de mis hábitos a lo largo de las semanas.
+
+**Criterios de aceptación:**
+* **Dado que** el usuario ha realizado múltiples mediciones en días o semanas anteriores,
+* **Cuando** accede a la sección "Dashboard / Historial",
+* **Entonces** la interfaz debe desplegar una gráfica de líneas interactiva con la evolución de su peso y un listado de las recomendaciones previas recibidas.
+
+---
+
+### HU-05: Calibración y tara de la celda de carga en firmware
+**Como** desarrollador/administrador del sistema,  
+**quiero** ejecutar una rutina de calibración del sensor HX711 en el firmware del ESP32,  
+**para** garantizar que las mediciones de peso tengan un margen de error menor al 1%.
+
+**Criterios de aceptación:**
+* **Dado que** la báscula está conectada al entorno de pruebas de firmware,
+* **Cuando** se coloca una masa patrón conocida sobre la celda de carga y se ejecuta la rutina de calibración,
+* **Entonces** el firmware calcula y guarda el factor de escala en la memoria Flash del ESP32, registrando un margen de error inferior al 1% en mediciones posteriores.
+
+---
+
+## 10.6 — Construye tu Product Backlog priorizado
+
+| ID | Historia de Usuario | Prioridad (MoSCoW) | Justificación |
+| :--- | :--- | :--- | :--- |
+| **HU-05** | Calibración y tara de la celda de carga en firmware | **Must Have** | Sin una lectura precisa de peso en la celda de carga (margen de error < 1%), la báscula pierde su función esencial de hardware. |
+| **HU-01** | Captura de peso y transmisión BLE | **Must Have** | La comunicación inalámbrica ESP32-App es la columna vertebral de la arquitectura de la solución. |
+| **HU-02** | Generación de recomendaciones personalizadas por IA | **Must Have** | Es la propuesta de valor diferenciadora principal del proyecto para resolver el problema central planteado. |
+| **HU-03** | Configuración del perfil de usuario y objetivos | **Should Have** | Necesario para alimentar el contexto del modelo de IA y ofrecer recomendaciones realmente personalizadas. |
+| **HU-04** | Consulta de historial y gráficas de tendencia | **Should Have** | Aporta un valor significativo para el seguimiento a largo plazo del usuario, estando dentro del alcance del dashboard. |
+| **HU-06** | Modo offline con caché local de mediciones | **Could Have** | Permite guardar registros cuando no hay conexión a internet para consultar la IA, pero no bloquea la funcionalidad MVP del prototipo. |
+| **HU-07** | Exportación de reportes PDF para nutricionistas | **Won't Have (este release)** | Se encuentra fuera del alcance del cronograma académico de 10 semanas y no es crítico para el uso básico del prototipo. |
