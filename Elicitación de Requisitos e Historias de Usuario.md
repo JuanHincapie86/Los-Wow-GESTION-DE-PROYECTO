@@ -15,8 +15,8 @@
 
 | Rol | Persona(s) | Responsabilidad principal en este proyecto |
 | :--- | :--- | :--- |
-| **Project Manager** | Integrante  | Elicitación de requisitos, redacción de actas, estructuración del cronograma de 10 semanas y control de hitos. |
-| **Product Owner** | Integrante  | Gestión y depuración del Product Backlog, priorización MoSCoW, definición de Criterios de Aceptación e interacción con el cliente. |
+| **Project Manager** | Juan David García Arroyave  | Elicitación de requisitos, redacción de actas, estructuración del cronograma de 10 semanas y control de hitos. |
+| **Product Owner** | Juan José Hincapié Tascón  | Gestión y depuración del Product Backlog, priorización MoSCoW, definición de Criterios de Aceptación e interacción con el cliente. |
 | **Scrum Master** | Alejandro Luna Hoyos | Facilitación de ceremonias ágiles, eliminación de bloqueos técnicos/de hardware y gestión de la velocidad del equipo. |
 | **Development Team** | Juan David Garcia, Juan Jose Hincapie, Joseph Lerma, Alejandro Luna, Sebastian Zacipa | Desarrollo del firmware ESP32, integración de celda HX711, configuración del servidor BLE, desarrollo de App móvil e integración con la API de IA. |
 
@@ -51,7 +51,7 @@
 
 ### ACTA DE ELICITACIÓN
 * **Proyecto:** Báscula Digital Inteligente con ESP32, Conectividad BLE y Sistema de Recomendaciones por IA
-* **Entrevistado:** 
+* **Entrevistado:** Joseph Gabriel Lerma Delgado
 * **Fecha:** 
 
 #### PUNTOS DE DOLOR ACTUALES:
