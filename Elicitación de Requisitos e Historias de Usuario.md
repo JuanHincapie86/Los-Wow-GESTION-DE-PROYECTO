@@ -15,10 +15,10 @@
 
 | Rol | Persona(s) | Responsabilidad principal en este proyecto |
 | :--- | :--- | :--- |
-| **Project Manager** | Integrante 1 | Elicitación de requisitos, redacción de actas, estructuración del cronograma de 10 semanas y control de hitos. |
-| **Product Owner** | Integrante 2 | Gestión y depuración del Product Backlog, priorización MoSCoW, definición de Criterios de Aceptación e interacción con el cliente. |
-| **Scrum Master** | Integrante 3 | Facilitación de ceremonias ágiles, eliminación de bloqueos técnicos/de hardware y gestión de la velocidad del equipo. |
-| **Development Team** | Integrantes 1, 2 y 3 | Desarrollo del firmware ESP32, integración de celda HX711, configuración del servidor BLE, desarrollo de App móvil e integración con la API de IA. |
+| **Project Manager** | Integrante  | Elicitación de requisitos, redacción de actas, estructuración del cronograma de 10 semanas y control de hitos. |
+| **Product Owner** | Integrante  | Gestión y depuración del Product Backlog, priorización MoSCoW, definición de Criterios de Aceptación e interacción con el cliente. |
+| **Scrum Master** | Alejandro Luna Hoyos | Facilitación de ceremonias ágiles, eliminación de bloqueos técnicos/de hardware y gestión de la velocidad del equipo. |
+| **Development Team** | Juan David Garcia, Juan Jose Hincapie, Joseph Lerma, Alejandro Luna, Sebastian Zacipa | Desarrollo del firmware ESP32, integración de celda HX711, configuración del servidor BLE, desarrollo de App móvil e integración con la API de IA. |
 
 ---
 
