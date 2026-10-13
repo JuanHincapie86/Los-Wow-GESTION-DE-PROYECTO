@@ -51,8 +51,8 @@
 
 ### ACTA DE ELICITACIÓN
 * **Proyecto:** Báscula Digital Inteligente con ESP32, Conectividad BLE y Sistema de Recomendaciones por IA
-* **Entrevistado:** Dr. Alejandro Martínez (Nutricionista / Consultor de Salud)
-* **Fecha:** 15 de Septiembre de 2026
+* **Entrevistado:** 
+* **Fecha:** 
 
 #### PUNTOS DE DOLOR ACTUALES:
 * Las básculas digitales convencionales entregan datos cuantitativos aislados sin explicar su significado ni ofrecer un contexto de acción.
