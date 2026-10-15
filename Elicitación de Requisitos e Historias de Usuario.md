@@ -70,7 +70,7 @@
 
 #### RESTRICCIONES EXPLÍCITAS:
 * Plazo temporal de desarrollo limitado estrictamente a 10 semanas académicas.
-* Prototipado físico en acrílico/impresión 3D, excluyendo fabricación o moldeo industrial.
+* Prototipado físico
 * Sin certificación médica regulatoria (FDA, INVIMA, etc.).
 * Limitaciones de memoria RAM/Flash y procesamiento nativas del microcontrolador ESP32.
 
