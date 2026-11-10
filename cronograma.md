@@ -34,15 +34,15 @@ Todas las dependencias definidas son de tipo **Fin a Comienzo (FS)** y están ju
 | Código | Tarea del Cronograma | Predecesoras | Tipo | Justificación Técnica de la Dependencia |
 | :--- | :--- | :---: | :---: | :--- |
 | **1.1** | Prototipo Físico y Ensamblado de Hardware | Ninguna | — | Inicio de la ruta de hardware. |
-| **1.2** | Firmware ESP32 de Lectura y Calibración | **1.1** | FS | Se requiere el circuito físico montado (ESP32 y HX711) para leer señales analógicas y calibrar la tara con masas patrón[cite: 2, 7]. |
-| **2.1** | Servidor BLE en Firmware ESP32 | **1.2** | FS | El servidor BLE requiere la rutina de lectura de peso funcional en el firmware para empaquetar y notificar las métricas[cite: 2, 7]. |
-| **2.2** | Aplicación Móvil Cliente y Receptor BLE | **2.1** | FS | La App móvil requiere el servidor GATT emitiendo señal BLE para verificar la sincronización y recepción de cargas útiles[cite: 3, 7]. |
-| **3.1** | Gestor de Perfil y Prompts de Salud | **2.2** | FS | Requiere la interfaz móvil lista para capturar el perfil del usuario (edad, metas) y construir la estructura JSON del prompt[cite: 3, 7]. |
-| **3.2** | Cliente API de IA y Generador de Reportes | **3.1** | FS | La solicitud a la API del LLM depende directamente de la plantilla de prompt contextualizada generada en el módulo 3.1[cite: 3, 7]. |
-| **4.1** | Base de Datos Local de Mediciones | **2.2** | FS | El módulo de persistencia local SQLite/Room requiere que la App reciba las lecturas vía BLE para almacenarlas en el historial[cite: 7]. |
-| **4.2** | Interfaz Gráfica de Tendencias y Registros | **3.2, 4.1** | FS | El Dashboard interactivo requiere los datos persistidos localmente (4.1) y la respuesta del modelo de IA (3.2) para renderizar gráficas y recomendaciones[cite: 3, 7]. |
+| **1.2** | Firmware ESP32 de Lectura y Calibración | **1.1** | FS | Se requiere el circuito físico montado (ESP32 y HX711) para leer señales analógicas y calibrar la tara con masas patrón. |
+| **2.1** | Servidor BLE en Firmware ESP32 | **1.2** | FS | El servidor BLE requiere la rutina de lectura de peso funcional en el firmware para empaquetar y notificar las métricas. |
+| **2.2** | Aplicación Móvil Cliente y Receptor BLE | **2.1** | FS | La App móvil requiere el servidor GATT emitiendo señal BLE para verificar la sincronización y recepción de cargas útiles. |
+| **3.1** | Gestor de Perfil y Prompts de Salud | **2.2** | FS | Requiere la interfaz móvil lista para capturar el perfil del usuario (edad, metas) y construir la estructura JSON del prompt. |
+| **3.2** | Cliente API de IA y Generador de Reportes | **3.1** | FS | La solicitud a la API del LLM depende directamente de la plantilla de prompt contextualizada generada en el módulo 3.1. |
+| **4.1** | Base de Datos Local de Mediciones | **2.2** | FS | El módulo de persistencia local SQLite/Room requiere que la App reciba las lecturas vía BLE para almacenarlas en el historial. |
+| **4.2** | Interfaz Gráfica de Tendencias y Registros | **3.2, 4.1** | FS | El Dashboard interactivo requiere los datos persistidos localmente (4.1) y la respuesta del modelo de IA (3.2) para renderizar gráficas y recomendaciones. |
 | **5.1** | Documentación y Artefactos de Gestión | Ninguna | — | Tarea transversal iniciada en paralelo desde el comienzo del proyecto. |
-| **5.2** | Suite de Pruebas End-to-End y Sustentación | **4.2, 5.1** | FS | Requiere el sistema completamente integrado en UI (4.2) y los artefactos de gestión cerrados (5.1) para la sustentación académica final[cite: 1, 6]. |
+| **5.2** | Suite de Pruebas End-to-End y Sustentación | **4.2, 5.1** | FS | Requiere el sistema completamente integrado en UI (4.2) y los artefactos de gestión cerrados (5.1) para la sustentación académica final. |
 
 ---
 ## 3. Pasos 3 y 4 — Recorrido Hacia Adelante, Recorrido Hacia Atrás y Holgura
@@ -125,10 +125,10 @@ Los hitos marcan los puntos de control clave con **duración 0**:
 
 | Código Hito | Nombre del Hito | Día Programado | Criterio de Verificación de la Línea Base |
 | :---: | :--- | :---: | :--- |
-| **HITO-1** | Calibración y Firmware Base Aprobado | Día 12 | Lectura de peso en celda HX711 estabilizada con error < 1 %[cite: 2, 7]. |
-| **HITO-2** | Enlace BLE y App Móvil Sincronizada | Día 23 | Transferencia BLE de peso visible en pantalla móvil < 2 s[cite: 2, 7]. |
-| **HITO-3** | Módulo de IA Integrado y Generador de Consejos | Día 33 | Reporte de recomendaciones de salud retornado por la API < 5 s[cite: 2, 7]. |
-| **HITO-4** | Cierre de Pruebas End-to-End y Sustentación | Día 40 | Prototipo físico e interfaz operando sin fallas ante evaluadores[cite: 2, 6]. |
+| **HITO-1** | Calibración y Firmware Base Aprobado | Día 12 | Lectura de peso en celda HX711 estabilizada con error < 1 %. |
+| **HITO-2** | Enlace BLE y App Móvil Sincronizada | Día 23 | Transferencia BLE de peso visible en pantalla móvil < 2 s. |
+| **HITO-3** | Módulo de IA Integrado y Generador de Consejos | Día 33 | Reporte de recomendaciones de salud retornado por la API < 5 s. |
+| **HITO-4** | Cierre de Pruebas End-to-End y Sustentación | Día 40 | Prototipo físico e interfaz operando sin fallas ante evaluadores. |
 
 ---
 ## 8. Checklist de Validación
